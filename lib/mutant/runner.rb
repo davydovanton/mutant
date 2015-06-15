@@ -53,6 +53,7 @@ module Mutant
       status = nil
 
       loop do
+        GC.start
         status = driver.status
         reporter.progress(status)
         break if status.done
